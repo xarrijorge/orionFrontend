@@ -5,19 +5,26 @@ import "./Onboarding.css"
 import logo from "../../assets/logo .png"
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 
 const Signup = () => {
+    const navigate=useNavigate();
     const countries = ["Kenya", "Botswana", "Ghana", "Liberia"];
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [country, setCountry] = useState(countries[0]);
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfrimPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+
+    const signUp =() =>{
+        navigate("/instructions")
+
+    }
 
 
     return (
@@ -35,7 +42,7 @@ const Signup = () => {
             </CardContent>
 
             <CardContent>
-                <form className='signupform'>
+                <form className='signupform' onSubmit={(e)=>{signUp()}}>
                     <div className='inputs'>
 
                         <div className='formgroup'>
@@ -56,7 +63,7 @@ const Signup = () => {
 
                         <div className='formgroup'>
                             <label htmlFor="country">Country</label>
-                            <select name="country" id="country" >
+                            <select name="country" id="country" value={country} >
 
                                 {
                                     countries.map((countr, index) => {
@@ -75,7 +82,7 @@ const Signup = () => {
                         </div>
                         <div className='formgroup'>
                         <label htmlFor='password'>Confirm Password</label>
-                        <input type="password" value={confirmPassword} placeholder='Confirm Password' required />
+                        <input type="password" value={confirmPassword} placeholder='Confirm Password' onChange={(e) =>setConfirmPassword(e.target.value)}/>
                         </div>
                     </div>
 
