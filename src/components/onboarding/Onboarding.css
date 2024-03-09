@@ -68,6 +68,10 @@
 
     .green{
         color: #00B286;
+
+    }
+    .black{
+        color: #000;
     }
 
 @media screen  and (min-width :768px){
