@@ -20,6 +20,27 @@
     padding: 30px;
 }
 
+.card2 {
+    box-shadow: 0.5px 0.5px 1px 1px #868e96;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    min-height: 400px;
+}
+
+.card2 img{
+    width: 100%;
+}
+
+.no_deco {
+    text-decoration: none;
+
+}
+
 .Red {
     color:red;
 }
@@ -45,7 +66,7 @@
     border-radius: 8px;
 }
 
-.signupform button{
+.signupform button, .Welcome button {
     background-color: #00B286;
     padding: 10px 80px;
     margin-top: 30px;
@@ -68,6 +89,42 @@
 
     .green{
         color: #00B286;
+
+    }
+    .black{
+        color: #000;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .flex-colum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .flex-column button {
+        border: 1px solid #00B286;
+        border-radius: 15px;
+    }
+
+    .flex {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .grey {
+        color: #868e96;
     }
 
 @media screen  and (min-width :768px){
@@ -79,7 +136,15 @@
 .formgroup{
     width: 47%;
 }
+.flex-column {
+    width: 31%;
+}
+.flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 
-    
+}
