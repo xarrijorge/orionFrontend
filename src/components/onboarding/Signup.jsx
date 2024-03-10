@@ -63,12 +63,12 @@ const Signup = () => {
 
                         <div className='formgroup'>
                             <label htmlFor="country">Country</label>
-                            <select name="country" id="country" value={country} >
+                            <select name="country" id="country" value={country} onChange={(e) => setCountry(e.target.value)}>
 
                                 {
                                     countries.map((countr, index) => {
                                         return (
-                                            <option value={countr} key={index} onChange={(e) => setCountry(e.target.value)}>{countr}</option>
+                                            <option value={countr} key={index} >{countr}</option>
                                         )
                                     })
                                 }

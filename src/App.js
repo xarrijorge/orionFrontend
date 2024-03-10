@@ -14,6 +14,8 @@ function App({ children }) {
         <Route path="/" element={<OnboardingPage />} > {/* No layout here */}
           <Route path="/" element={<Signup />} /> {/* No layout here */}
           <Route path="/instructions" element={<Instructions />} />
+          <Route path="/step_one" element={<Step1 />} />
+          <Route path="/step_two" element={<Step2 />} />
         </Route>
         <Route path="/dashboard/home" element={<Layout><DashboardHome /></Layout>}> {/* Layout for dashboard sub-routes */}
         </Route>
