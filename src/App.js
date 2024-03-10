@@ -1,13 +1,15 @@
+import React from 'react'
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import OnboardingPage from './pages/OnboardingPage';
 import Signup from './components/onboarding/Signup';
 import Instructions from './components/onboarding/Instructions';
 import Layout from './components/layout/layout'; // Import the Layout component
 import DashboardHome from './pages/dashboard/DashboardHome'; // Import the DashboardHome component
-import MaintenanceStats from './components/Dashboard/Stats';
+import Step1 from './components/onboarding/Step1';
+import Step2 from './components/onboarding/Step2';
 
-function App({ children }) {
+function App() {
   return (
     <Router>
       <Routes>

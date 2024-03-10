@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
-import MuiAppBar from '@mui/material/AppBar'
 import List from '@mui/material/List'
 import Divider from '@mui/material/Divider'
 import DashboardIcon from '@mui/icons-material/Dashboard'
@@ -15,25 +15,6 @@ import ListItemWithLink from '../ListItemWithLink'
 
 const drawerWidth = 240
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
-  })
-)
-
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -44,8 +25,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }))
 
 export default function VerticalSidebar({ children }) {
-  const [open, setOpen] = React.useState(false)
-
   return (
     <div>
       <Box sx={{ display: 'flex' }}>
