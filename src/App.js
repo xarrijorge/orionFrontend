@@ -9,16 +9,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<OnboardingPage />} /> {/* No layout here */}
-        <Route path="signup" element={<Signup />} /> {/* No layout here */}
+        <Route path="/" element={<OnboardingPage />} > {/* No layout here */}
+          <Route path="/" element={<Signup />} /> {/* No layout here */}
+          <Route path="/instructions" element={<Instructions />} />
+        </Route>
         <Route path="dashboard/*" element={<Layout />}> {/* Layout for dashboard sub-routes */}
           <Route path="" element={<Outlet />} /> {/* Render child routes within layout */}
           <Route path=":subPath" element={<Outlet />} /> {/* Handle dynamic sub-routes */}
-          <Route path="/instructions" element={<Instructions />} />
         </Route>
         {/* Other routes... */}
       </Routes>
-    </Router>
+    </Router >
   );
 }
 
