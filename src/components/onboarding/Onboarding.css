@@ -111,6 +111,18 @@
         width: 100%;
     }
 
+    .indi {
+        width: 60px;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
     .flex-column button {
         border: 1px solid #00B286;
         border-radius: 15px;
@@ -148,3 +160,4 @@
 
 
 }
+

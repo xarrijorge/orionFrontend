@@ -3,6 +3,7 @@ import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import OnboardingPage from './pages/OnboardingPage';
 import Signup from './components/onboarding/Signup';
 import Instructions from './components/onboarding/Instructions';
+import Step1 from './components/onboarding/Step1';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<OnboardingPage/>}>
         <Route path="/" element={<Signup/>}/>
         <Route path="/instructions" element={<Instructions/>}/>
+        <Route path="/step_one" element={<Step1/>}/>
         </Route>
       </Routes>
     </Router>
