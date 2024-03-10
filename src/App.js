@@ -4,8 +4,10 @@ import OnboardingPage from './pages/OnboardingPage';
 import Signup from './components/onboarding/Signup';
 import Instructions from './components/onboarding/Instructions';
 import Layout from './components/layout/layout'; // Import the Layout component
+import DashboardHome from './pages/dashboard/DashboardHome'; // Import the DashboardHome component
+import MaintenanceStats from './components/Dashboard/Stats';
 
-function App() {
+function App({ children }) {
   return (
     <Router>
       <Routes>
@@ -13,11 +15,8 @@ function App() {
           <Route path="/" element={<Signup />} /> {/* No layout here */}
           <Route path="/instructions" element={<Instructions />} />
         </Route>
-        <Route path="dashboard/*" element={<Layout />}> {/* Layout for dashboard sub-routes */}
-          <Route path="" element={<Outlet />} /> {/* Render child routes within layout */}
-          <Route path=":subPath" element={<Outlet />} /> {/* Handle dynamic sub-routes */}
+        <Route path="/dashboard/home" element={<Layout><DashboardHome /></Layout>}> {/* Layout for dashboard sub-routes */}
         </Route>
-        {/* Other routes... */}
       </Routes>
     </Router >
   );
