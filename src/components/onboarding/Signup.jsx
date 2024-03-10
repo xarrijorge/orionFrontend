@@ -86,7 +86,7 @@ const Signup = () => {
                         </div>
                     </div>
 
-                    <Button  className= 'signup_button' variant="contained">Sign Up</Button>
+                    <Button type='submit'  className= 'signup_button' variant="contained">Sign Up</Button>
 
                 </form>
 
