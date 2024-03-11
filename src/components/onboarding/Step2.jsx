@@ -94,13 +94,13 @@ const Step2 = () => {
         </div>
 
         <div className='flex-column2'>
-          <Link to='/step_three' className='no_deco'>
+          <Link to='/dashboard/home' className='no_deco'>
             <Button type='submit' className='signup_button' variant='contained'>
               Next
             </Button>
           </Link>
           <br /> <br />
-          <Link className='green' to='/loading'>
+          <Link className='green' to='/dashboard/home'>
             skip{' '}
           </Link>
         </div>
