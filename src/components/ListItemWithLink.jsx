@@ -6,14 +6,14 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material'
-import { Link } from 'react-router-dom' // Import Link for navigation
+import { NavLink } from 'react-router-dom' // Import Link for navigation
 
 const ListItemWithLink = ({ label, icon, to }) => {
   return (
-    <ListItem sx={{ color: 'white' }}>
-      <ListItemButton component={Link} to={to}>
-        <ListItemIcon sx={{ color: 'white' }}>{icon}</ListItemIcon>
-        <ListItemText primary={label} sx={{ color: 'white' }} />{' '}
+    <ListItem className='dashboardLink'>
+      <ListItemButton component={NavLink} to={to}>
+        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemText primary={label} />
       </ListItemButton>
     </ListItem>
   )

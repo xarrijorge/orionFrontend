@@ -13,7 +13,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment'
 import Logo from '../../assets/logo_white.png'
 import ListItemWithLink from '../ListItemWithLink'
 
-const drawerWidth = 240
+const drawerWidth = 300
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
