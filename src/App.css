@@ -31,10 +31,24 @@
   text-align: center;
   margin: 20px 0;
 }
+.footerBox {
+  width: 50%;
+}
 
 .nyumbaMate {
   position: fixed;
   right: 30px;
   bottom: 30px;
   cursor: pointer;
+}
+
+.propButtonBox {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 10vh;
+}
+.addProp {
+  width: 200px;
+  height: 50px;
 }
