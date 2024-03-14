@@ -99,3 +99,18 @@
   padding: 1rem;
   border-left: 1px solid #ddd;
 }
+
+.actionNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid #bebbbb;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+.kabaanDivider {
+  border-width: 0.5px;
+  margin: 20px 0;
+}
