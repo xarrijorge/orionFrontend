@@ -1,24 +1,17 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react'
-import { Box, Grid, Typography, Card, CardContent } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Grid, Typography, Card, CardContent, Paper } from '@mui/material'
 import TicketComponent from '../../components/Ticket'
 
 const RequestDetails = ({ tickets }) => {
   const [selectedTicket, setSelectedTicket] = useState(tickets[0])
 
-  const handleTicketClick = (e, ticket) => {
-    e.preventDefault()
-    setSelectedTicket(ticket)
+  const handleTicketClick = (idx) => {
+    setSelectedTicket(tickets[idx])
   }
 
-  useEffect(() => {
-    if (selectedTicket) {
-      console.log('Selected ticket:', selectedTicket)
-    }
-  }, [selectedTicket])
-
   return (
-    <Box sx={{ p: 3 }}>
+    <Box sx={{ minHeight: '80vh' }}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Box
@@ -32,28 +25,36 @@ const RequestDetails = ({ tickets }) => {
               <TicketComponent
                 key={idx}
                 {...ticket}
-                handleClick={handleTicketClick}
+                isSelected={ticket.id === selectedTicket.id} // Pass isSelected prop
+                handleClick={() => handleTicketClick(idx)}
               />
             ))}
           </Box>
         </Grid>
-        <Grid item xs={12} md={8}>
-          <Card>
-            <CardContent>
-              <Typography variant='h6' gutterBottom>
-                {selectedTicket.title}
-              </Typography>
-              <Typography variant='body1' gutterBottom>
-                {selectedTicket.description}
-              </Typography>
-              <Typography variant='body1' gutterBottom>
-                Status: {selectedTicket.status}
-              </Typography>
-              <Typography variant='body1' gutterBottom>
-                Date: {selectedTicket.date}
-              </Typography>
-            </CardContent>
-          </Card>
+        <Grid
+          item
+          xs={12}
+          md={8}
+          sx={{ height: '100%' }}
+          className='requestDetailsPane'>
+          <Paper color='red'>
+            <Card sx={{ height: '80vh' }}>
+              <CardContent>
+                <Typography variant='h6' gutterBottom>
+                  {selectedTicket?.title}
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                  {selectedTicket?.description}
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                  Status: {selectedTicket?.status}
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                  Date: {selectedTicket?.date}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Paper>
         </Grid>
       </Grid>
     </Box>

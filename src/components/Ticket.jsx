@@ -16,12 +16,18 @@ const TicketComponent = ({
   date,
   title,
   handleClick,
+  isSelected,
 }) => {
+  const styles = {
+    border: isSelected ? '1px solid green' : null,
+    padding: '10px',
+    marginBottom: '5px',
+    cursor: 'pointer',
+    backgroundColor: '#FAF9F6',
+    boxShadow: isSelected ? 'default' : 'none',
+  }
   return (
-    <Card
-      sx={{ mb: 2 }}
-      onClick={handleClick}
-      style={{ cursor: 'pointer', marginBottom: '8px' }}>
+    <Card sx={styles} onClick={handleClick}>
       <CardContent>
         <Box display='flex' justifyContent='space-between'>
           <Typography variant='h6' gutterBottom>
