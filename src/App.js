@@ -11,6 +11,7 @@ import WorkOrders from './pages/dashboard/WorkOrders'
 import Properties from './pages/dashboard/Properties';
 import Step1 from './components/onboarding/Step1';
 import Step2 from './components/onboarding/Step2';
+import RequestDetails from './pages/dashboard/RequestDetails';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/dashboard/orders" element={<Layout><WorkOrders /></Layout>}>
         </Route>
         <Route path="/dashboard/properties" element={<Layout><Properties /></Layout>}>
+        </Route>
+        <Route path="/dashboard/request-details" element={<Layout><RequestDetails /></Layout>}>
         </Route>
 
 

@@ -15,9 +15,13 @@ const TicketComponent = ({
   status,
   date,
   title,
+  handleClick,
 }) => {
   return (
-    <Card sx={{ mb: 2 }}>
+    <Card
+      sx={{ mb: 2 }}
+      onClick={handleClick}
+      style={{ cursor: 'pointer', marginBottom: '8px' }}>
       <CardContent>
         <Box display='flex' justifyContent='space-between'>
           <Typography variant='h6' gutterBottom>

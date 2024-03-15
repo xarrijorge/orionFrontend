@@ -5,12 +5,12 @@ import { Button } from '@mui/material'
 
 const getStatusColor = (status) => {
   switch (status) {
-    case 'Pending':
-      return 'orange'
     case 'In Progress':
-      return 'blue'
-    case 'Completed':
+      return 'orange'
+    case 'Done':
       return 'green'
+    case 'Cancelled':
+      return 'red'
     default:
       return 'gray'
   }
