@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import TicketComponent from '../../components/Ticket'
 import ActionNav from '../../components/ActionNav'
-import AppsIcon from '@mui/icons-material/Apps'
+import DragIndicator from '@mui/icons-material/DragIndicator'
 
 const workOrders = [
   // Define your work orders here with details like id, title, description etc.
@@ -70,7 +70,7 @@ const columns = {
 }
 
 function WorkOrdersBoard() {
-  const icons = [<AppsIcon />]
+  const icons = [<DragIndicator />]
   return (
     <>
       <ActionNav title='Work orders' icons={icons} />

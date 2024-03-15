@@ -7,8 +7,16 @@
 .dashboardLink * {
   color: #fff;
 }
-.dashboardLink .active span {
-  font-weight: bolder;
+.dashboardLink .active {
+  background-color: white;
+  border-radius: 10px;
+}
+.active * {
+  color: #00b286;
+}
+
+.dashboardLink .active {
+  pointer-events: none;
 }
 
 .repairContainer {
@@ -113,4 +121,12 @@
 .kabaanDivider {
   border-width: 0.5px;
   margin: 20px 0;
+}
+
+.fluidGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  gap: 20px;
+  grid-template-rows: auto;
+  justify-content: center;
 }

@@ -12,8 +12,8 @@ const ListItemWithLink = ({ label, icon, to }) => {
   return (
     <ListItem className='dashboardLink'>
       <ListItemButton component={NavLink} to={to}>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={label} />
+        <ListItemIcon className='dashIcon'>{icon}</ListItemIcon>
+        <ListItemText className='dashLabel' primary={label} />
       </ListItemButton>
     </ListItem>
   )

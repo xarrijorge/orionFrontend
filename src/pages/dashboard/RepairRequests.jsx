@@ -4,8 +4,8 @@ import React from 'react'
 import UnitsTable from '../../components/UnitTable'
 import Box from '@mui/material/Box'
 import ActionNav from '../../components/ActionNav'
-import AppsIcon from '@mui/icons-material/Apps'
-import List from '@mui/icons-material/List'
+import DragIndicator from '@mui/icons-material/DragIndicator'
+import Reorder from '@mui/icons-material/Reorder'
 
 const RepairRequests = () => {
   const dummyData = [
@@ -51,7 +51,7 @@ const RepairRequests = () => {
     },
   ]
 
-  const icons = [<List />, <AppsIcon />]
+  const icons = [<Reorder />, <DragIndicator />]
   return (
     <>
       <ActionNav title='Repair requests' icons={icons} />
