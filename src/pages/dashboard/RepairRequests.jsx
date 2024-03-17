@@ -1,60 +1,114 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
-import Stats from '../../components/Dashboard/Stats'
-import { Typography, Box } from '@mui/material'
-import dashboardPlaceholder from '../../assets/dashboardPlaceholder.png'
-import nyumbaMate from '../../assets/Bot.png'
-import Tooltip from '@mui/material/Tooltip'
+import { React, useState } from 'react'
+import UnitsTable from '../../components/UnitTable'
+import Box from '@mui/material/Box'
+import ActionNav from '../../components/ActionNav'
+import DragIndicator from '@mui/icons-material/DragIndicator'
+import Reorder from '@mui/icons-material/Reorder'
+import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault' // Import DisabledByDefault icon
+import RequestDetails from './RequestDetails'
 
 const RepairRequests = () => {
-  const data = [
-    { title: 'Electrical related issues', data: 0 },
-    { title: 'Plumbing issues', data: 0 },
-    { title: 'HVAC', data: 0 },
-    { title: 'Overdue requests', data: 0 },
+  const [currentView, setCurrentView] = useState('TableView') // Initial view state
+
+  const dummyData = [
+    {
+      property: 'The Grove',
+      orders: [
+        {
+          id: 1,
+          unitNumber: 'A101',
+          request: 'Repair plumbing',
+          status: 'In Progress',
+          title: 'Request title',
+        },
+        {
+          id: 2,
+          unitNumber: 'B205',
+          request: 'Fix electrical issue',
+          status: 'In Progress',
+          title: 'Request title',
+        },
+        {
+          id: 3,
+          unitNumber: 'C304',
+          request: 'Paint walls',
+          status: 'Done',
+          title: 'Request title',
+        },
+        {
+          id: 4,
+          unitNumber: 'D403',
+          request: 'Replace light fixtures',
+          status: 'In Progress',
+          title: 'Request title',
+        },
+        {
+          id: 5,
+          unitNumber: 'E502',
+          request: 'Repair HVAC',
+          status: 'In Progress',
+          title: 'Request title',
+        },
+      ],
+    },
   ]
+  const tickets = [
+    { id: 1, title: 'Task 1', status: 'new' },
+    { id: 2, title: 'Task 2', status: 'progress' },
+    {
+      ticketNumber: 1,
+      description: 'Description 1',
+      status: 'new',
+      date: '2023-12-01',
+      title: 'Request title',
+    },
+  ]
+  const TableView = () => (
+    <>
+      <Box>
+        <UnitsTable data={dummyData} />
+      </Box>
+      <Box>
+        <UnitsTable data={dummyData} />
+      </Box>
+    </>
+  )
+
+  const handleIconClick = (iconIndex) => {
+    const newView = iconIndex === 0 ? 'TableView' : 'RequestDetails' // Determine view based on index
+    setCurrentView(newView)
+  }
+
+  const icons = [
+    currentView === 'TableView' ? (
+      <DisabledByDefaultIcon />
+    ) : (
+      <Reorder onClick={() => handleIconClick(0)} />
+    ),
+    currentView === 'RequestDetails' ? (
+      <DisabledByDefaultIcon />
+    ) : (
+      <DragIndicator onClick={() => handleIconClick(1)} />
+    ),
+  ]
+
+  const renderView = () => {
+    switch (currentView) {
+      case 'TableView':
+        return <TableView />
+      case 'RequestDetails':
+        return <RequestDetails tickets={tickets} /> // Replace with actual rendering logic for RequestDetails
+      default:
+        return null
+    }
+  }
+
   return (
     <>
-      <Stats stats={data} />
-      <div className='repairContainer'>
-        <Typography className='singleDashHeader' variant='h6'>
-          Welcome to Your Repair Requests Page
-        </Typography>
-        <Box
-          component='img'
-          className='singleDashImg'
-          alt='The house from the offer.'
-          src={dashboardPlaceholder}
-        />
-        <div>
-          <p className='singleDashFooter'>Ready to manage your work orders? </p>
-          <p className='singleDashFooter'>
-            Click "Create Work Order" to get started.
-          </p>
-          <p className='singleDashFooter'>
-            Need assistance? Contact support.
-            <br /> Let's streamline your work orders!
-          </p>
-        </div>
-      </div>
-      <Tooltip
-        title='Hey, you can ask me anything'
-        placement='left-end'
-        arrow
-        sx={{
-          '& .MuiTooltip-tooltip': {
-            backgroundColor: '#FFFFFF', // White background color
-            color: '#000000', // Black text color
-            border: '1px solid #000000', // Black border
-          },
-        }}>
-        <Box
-          component='img'
-          className='nyumbaMate'
-          alt='The house from the offer.'
-          src={nyumbaMate}
-        />
-      </Tooltip>
+      <ActionNav title='Repair requests' icons={icons} />
+      {renderView()}
     </>
   )
 }
