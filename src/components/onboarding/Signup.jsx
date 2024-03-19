@@ -6,6 +6,7 @@ import logo from '../../assets/logo .png'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { Link, useNavigate } from 'react-router-dom'
+import { Input } from '@mui/material'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -102,7 +103,7 @@ const Signup = () => {
                 {' '}
                 <span className='Red'>*</span>Password
               </label>
-              <input
+              <Input
                 type='password'
                 value={password}
                 placeholder='Password'
@@ -115,7 +116,7 @@ const Signup = () => {
             </div>
             <div className='formgroup'>
               <label htmlFor='password'>Confirm Password</label>
-              <input
+              <Input
                 type='password'
                 value={confirmPassword}
                 placeholder='Confirm Password'

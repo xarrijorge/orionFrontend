@@ -9,7 +9,7 @@ import DashboardHome from './pages/dashboard/DashboardHome'; // Import the Dashb
 import RepairRequests from './pages/dashboard/RepairRequests'
 import WorkOrders from './pages/dashboard/WorkOrders'
 import Properties from './pages/dashboard/Properties';
-import Step1 from './components/onboarding/Step1';
+import AddProperty from './components/onboarding/XXAddProperty';
 import Step2 from './components/onboarding/Step2';
 import RequestDetails from './pages/dashboard/RequestDetails';
 
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<OnboardingPage />} > {/* No layout here */}
           <Route path="/" element={<Signup />} /> {/* No layout here */}
           <Route path="/instructions" element={<Instructions />} />
-          <Route path="/step_one" element={<Step1 />} />
+          <Route path="/property/add" element={<AddProperty />} />
           <Route path="/step_two" element={<Step2 />} />
         </Route>
         <Route path="/dashboard/home" element={<Layout><DashboardHome /></Layout>}>

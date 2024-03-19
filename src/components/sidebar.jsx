@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import * as React from 'react'
+// import axios from 'axios'
 import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -10,8 +11,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import HandymanIcon from '@mui/icons-material/Handyman'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 import ApartmentIcon from '@mui/icons-material/Apartment'
-import Logo from '../../assets/logo_white.png'
-import ListItemWithLink from '../ListItemWithLink'
+import Logo from '../assets/logo_white.png'
+import ListItemWithLink from './ListItemWithLink'
 
 const drawerWidth = 300
 

@@ -17,7 +17,7 @@ const Stats = ({ stats }) => {
         backgroundColor: '#FFFFFF',
         textAlign: 'center',
       }}>
-      <Grid container xs={12}>
+      <Grid container item xs={12}>
         {stats.map((item, index) => (
           <Grid key={index} xs={columnSize}>
             <Typography variant='h5' style={{ color: '#00B286' }}>

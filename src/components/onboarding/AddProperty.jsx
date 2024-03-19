@@ -15,7 +15,7 @@ const Step1 = () => {
   const [nou, setNou] = useState('')
   const [address, setAddress] = useState('')
   const [zipCode, setZipCode] = useState('')
-  const [statee, setStatee] = useState('')
+  const [state, setState] = useState('')
   const [country, setCountry] = useState(countries[0])
   const [city, setCity] = useState(countries[0])
 
@@ -128,9 +128,9 @@ const Step1 = () => {
                 <label htmlFor='zip'>State</label>
                 <input
                   type='text'
-                  value={statee}
+                  value={state}
                   placeholder='Enter State'
-                  onChange={(e) => setStatee(e.target.value)}
+                  onChange={(e) => setState(e.target.value)}
                 />
               </div>
             </div>
