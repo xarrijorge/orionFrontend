@@ -1,0 +1,2 @@
+unit_name,unit_type,unit_size,rent_amount,tenant_name,tenant_email,tenant_phone
+Apartment 101,Apartment,2BHK,1500,John Doe,johndoe@example.com,1234567890
